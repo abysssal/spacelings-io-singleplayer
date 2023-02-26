@@ -1879,6 +1879,7 @@ MonoBehaviour:
   speed: 7
   jumpPower: 9
   jumps: 2
+  fallDamageThreshold: 5
   mousePos: {x: 0, y: 0, z: 0}
   health: 100
   hunger: 100

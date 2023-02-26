@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public float jumpPower;
     public int jumps;
 
+    public float fallDamageThreshold;
+    private float previousYVelocity;
+
     public Vector3 mousePos;
 
     [Header("Attributes")]
@@ -119,6 +122,19 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void FixedUpdate()
+    {
+        if (rb.velocity.y < previousYVelocity)
+        {
+            float fallDistance = Mathf.Abs(rb.velocity.y) * Time.fixedDeltaTime;
+            if (fallDistance >= fallDamageThreshold)
+            {
+                ApplyFallDamage(fallDistance);
+            }
+        }
+        previousYVelocity = rb.velocity.y;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -171,8 +187,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void addTimeAirBorne()
+    public void ApplyFallDamage(float fallDistance)
     {
-        timeAirBorne++;
+        int damage = Mathf.RoundToInt(fallDistance - fallDamageThreshold);
+        health -= damage;
     }
 }
