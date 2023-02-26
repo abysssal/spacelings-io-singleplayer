@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 185736468}
   - component: {fileID: 185736470}
   - component: {fileID: 185736469}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Dirtmap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1392,7 +1392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -787.49994, y: 0}
+  m_AnchoredPosition: {x: -787.5, y: 0}
   m_SizeDelta: {x: -1625, y: -70.000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656188460
@@ -1443,7 +1443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668117572}
   - component: {fileID: 668117573}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Ground
   m_Icon: {fileID: 0}

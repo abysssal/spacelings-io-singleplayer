@@ -114,7 +114,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(Mathf.Floor(mousePos.x), Mathf.Floor(mousePos.y)), 1);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(Mathf.Floor(mousePos.x), Mathf.Floor(mousePos.y)), 1, 3);
+
             if (hit.collider && canDestroy)
             {
                 StartCoroutine(DestroyBlock(tilemap, timeBetweenAction, new Vector3Int(Mathf.FloorToInt(mousePos.x), Mathf.FloorToInt(mousePos.y), 0)));
