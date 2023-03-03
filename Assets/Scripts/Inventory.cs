@@ -7,9 +7,25 @@ public class Inventory : MonoBehaviour
     public List<Item> inventory;
     public Item itemEquipped;
 
+    private Item foundItem;
+
     public void Update()
     {
-        print(Input.mouseScrollDelta);
+        print(GetItemIndex("Raw Meat"));
+    }
+
+    public int GetItemIndex(string name)
+    {
+        foreach (Item items in inventory)
+        {
+            if (items.name == name)
+            {
+                foundItem = items;
+                break;
+            }
+        }
+
+        return inventory.IndexOf(foundItem);
     }
 
     public void Add(Item item, int amount)
